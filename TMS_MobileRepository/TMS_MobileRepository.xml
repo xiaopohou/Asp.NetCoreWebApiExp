@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TMS_MobileRepository</name>
+    </assembly>
+    <members>
+        <member name="T:TMS_MobileRepository.DataBaseConfig">
+            <summary>
+            数据库配置信息获取类
+            </summary>
+        </member>
+        <member name="M:TMS_MobileRepository.DataBaseConfig.GetSqlConnection">
+            <summary>
+            Sql Server链接字符串
+            </summary>
+        </member>
+        <member name="T:TMS_MobileRepository.Helpers.ConfigurationHelper">
+            <summary>
+            获取配置帮助类
+            </summary>
+        </member>
+        <member name="P:TMS_MobileRepository.Helpers.ConfigurationHelper.config">
+            <summary>
+            配置信息
+            </summary>
+        </member>
+        <member name="M:TMS_MobileRepository.Helpers.ConfigurationHelper.GetValue(System.String)">
+            <summary>
+            根据key得到配置信息
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS_MobileRepository.IRepository.IBaseRepository`1">
+            <summary>
+            基础数据仓储接口(CRUD)
+            </summary>
+        </member>
+        <member name="M:TMS_MobileRepository.IRepository.IBaseRepository`1.AddEntityAsync(`0)">
+            <summary>
+            新增实体
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileRepository.IRepository.IBaseRepository`1.AddEntityListAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量添加实体
+            </summary>
+            <param name="entityList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileRepository.IRepository.IBaseRepository`1.GetByIdAsync(System.Int32)">
+            <summary>
+            根据主键Id获取一个实体
+            </summary>
+            <param name="id">主键Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileRepository.IRepository.IBaseRepository`1.GetAllAsync">
+            <summary>
+            获取所有实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileRepository.IRepository.IBaseRepository`1.UpdateAsync(`0)">
+            <summary>
+            修改一个实体
+            </summary>
+            <param name="entity">要修改的实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileRepository.IRepository.IBaseRepository`1.DeleteAsync(System.Int32)">
+            <summary>
+            根据主键Id删除一个实体
+            </summary>
+            <param name="id">主键Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS_MobileRepository.IRepository.IUserRepository">
+            <summary>
+            人员仓储接口测试用
+            </summary>
+        </member>
+        <member name="T:TMS_MobileRepository.Repository.UserRepository">
+            <summary>
+            人员仓储实现测试用
+            </summary>
+        </member>
+    </members>
+</doc>

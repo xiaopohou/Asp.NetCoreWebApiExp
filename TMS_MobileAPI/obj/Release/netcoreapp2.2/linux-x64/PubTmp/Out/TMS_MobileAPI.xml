@@ -1,0 +1,392 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TMS_MobileAPI</name>
+    </assembly>
+    <members>
+        <member name="T:TMS_MobileAPI.Business.IEmailBusiness">
+            <summary>
+            2018/12/16 zhong
+            Email定时业务逻辑接口 
+            </summary>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.IEmailBusiness.JoinEmailQueue``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            将邮件加入定时队列
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.IEmailBusiness.WriteEmailLog(System.Boolean,System.String,System.String)">
+            <summary>
+            新增邮件日志
+            </summary>
+            <param name="b"></param>
+            <param name="type"></param>
+            <param name="str"></param>
+        </member>
+        <member name="T:TMS_MobileAPI.Business.EmailBusiness">
+            <summary>
+            2018/12/16 zhong
+            Email定时业务逻辑
+            </summary>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.EmailBusiness.JoinEmailQueue``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            将邮件加入定时队列
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.EmailBusiness.PutMissonJobToQueue(System.DateTime,TMS_MobileRepository.Entity.RL_MainItem)">
+            <summary>
+            任务队列
+            </summary>
+            <param name="JobTime"></param>
+            <param name="rL_MainItem"></param>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.EmailBusiness.MissonPostEmail(System.Int32)">
+            <summary>
+            任务定时邮件发送
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.EmailBusiness.PutMettingJobToQueue(System.DateTime,TMS_MobileRepository.Entity.RL_Meeting)">
+            <summary>
+            会议队列
+            </summary>
+            <param name="JobTime"></param>
+            <param name="rL_Meeting"></param>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.EmailBusiness.MettingPostEmail(System.Int32)">
+            <summary>
+            会议定时邮件发送
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.EmailBusiness.WriteEmailLog(System.Boolean,System.String,System.String)">
+            <summary>
+            新增邮件日志
+            </summary>
+            <param name="b"></param>
+            <param name="type"></param>
+            <param name="str"></param>
+        </member>
+        <member name="T:TMS_MobileAPI.Business.MettingBusiness">
+            <summary>
+            2018/12/13 zhong
+            会议业务逻辑
+            </summary>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.MettingBusiness.GetEntityList(TMS_MobileRepository.Entity.RL_Meeting)">
+            <summary>
+            生成多条
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.MettingBusiness.GetWeeks(System.DateTime,System.DateTime,System.String,System.DayOfWeek)">
+            <summary>
+            根据频率算出会议时间
+            </summary>
+            <param name="AStart"></param>
+            <param name="AEnd"></param>
+            <param name="frequency"></param>
+            <param name="AWeek"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.MettingBusiness.GetOfWeek(System.String)">
+            <summary>
+            周几转换为dayofweek
+            </summary>
+            <param name="week"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Business.MettingBusiness.AddIDToMettingList(System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{TMS_MobileRepository.Entity.RL_Meeting})">
+            <summary>
+            将ID加入Metting列中
+            </summary>
+            <param name="IdList"></param>
+            <param name="rL_Meetings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS_MobileAPI.Controllers.CalendarController">
+            <summary>
+            2018/12/15 zhong
+            日历
+            </summary>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.CalendarController.GetCalendarDataAsync(System.String,System.String)">
+            <summary>
+            获取日历数据
+            返回结果HaveMain表示当天是否有任务，HaveMeet表示当天是否有会议，MainData为当天任务的数据，
+            MeetData为当天会议的数据。
+            </summary>
+            <param name="YearMonth">年月(YYYY-MM，2018-12)</param>
+            <param name="UserCode">用户UserCode</param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS_MobileAPI.Controllers.MettingController">
+            <summary>
+            会议
+            </summary>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MettingController.#ctor(TMS_MobileRepository.IRepository.IMeetingRepository,System.Text.Encodings.Web.HtmlEncoder,Microsoft.Extensions.Logging.ILogger{TMS_MobileAPI.Controllers.MettingController},TMS_MobileAPI.Business.IEmailBusiness)">
+            <summary>
+            会议构造函数
+            </summary>
+            <param name="_meetingRepository"></param>
+            <param name="_htmlEncoder"></param>
+            <param name="_logger"></param>
+            <param name="_emailBusiness"></param>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MettingController.GetMeetinList(System.String,System.String)">
+            <summary>
+            根据状态,UserCode获取会议列表
+            </summary>
+            <param name="UserCode">登录人USERCODE</param>
+            <param name="Status">查询状态（待办传递参数"待开始会议",
+            全部状态为"我发起的会议","历史会议","待开始会议"）</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MettingController.GetByIdAsync(System.Int32)">
+            <summary>
+            根据ID获取会议详情与修改当前会议获取详情
+            </summary>
+            <param name="id">会议主键ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MettingController.GetMeetinUpdateDetail(System.String)">
+            <summary>
+             会议修改，根据MeetingGuid获取修改页面数据详情（修改整个循环用）
+            </summary>
+            <param name="MeetingGuid">GUid</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MettingController.MeetinCancel(System.Int32)">
+            <summary>
+            取消当前会议
+            </summary>
+            <param name="id">主键ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MettingController.MeetinCancelAll(System.String)">
+            <summary>
+            取消全部循环会议
+            </summary>
+            <param name="MeetingGuid">GUid</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MettingController.UpdateAsync(TMS_MobileRepository.Entity.RL_Meeting)">
+            <summary>
+            根据ID修改会议
+            </summary>
+            <param name="entity">会议实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MettingController.MeetinUpdate(TMS_MobileRepository.Entity.RL_Meeting)">
+            <summary>
+            修改所有循环会议内容
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MettingController.CreateAsync(TMS_MobileRepository.Entity.RL_Meeting)">
+            <summary>
+            新建会议
+            </summary>
+            <param name="rL_Meeting">Id默认为0，MeetingGuid默认为空， meetingType为0或1，frequency为"每周"，"每双周","每四周"，week为周一到周五
+            注意开始结束时间逻辑,ParticipantsCode、Participants、Email多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MettingController.GetUpdateRL_MeetingStatus(System.Int32)">
+            <summary>
+            修改会议状态为完成
+            </summary>
+            <param name="id">会议ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MettingController.EmailpostAsyncEmailpostAsync(TMS_MobileRepository.Entity.Emailparameter,System.String)">
+            <summary>
+            邮件发送
+            </summary>
+            <param name="Email">收件人邮箱（多个以","分隔）</param>
+            <param name="entity">邮件内容参数</param>
+            <param name="EmailType">发送邮件类型（AddMeeting：新建会议,AddMeetinPeople:会议新增人员、UpdataMeeting：修改会议、CancelMeeting：会议取消、FrontMeeting：会议前半小时）</param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS_MobileAPI.Controllers.MissionController">
+            <summary>
+            任务
+            </summary>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MissionController.CreateAsync(TMS_MobileRepository.Entity.RL_MainItem)">
+            <summary>
+            新增任务，ID默认为0即可
+            </summary>
+            <param name="rL_MainItem">任务实体,ID默认为0即可</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MissionController.getMissionList(System.Int32)">
+            <summary>
+            根据MissionID获取任务详情
+            </summary>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MissionController.getMissonByType(System.String,System.String)">
+            <summary>
+             根据状态查询任务列表
+            </summary>
+            <param name="status">任务状态（All为查询所有信息）</param>
+            <param name="UserCode">用户Userid</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MissionController.GetInstitution(TMS_MobileRepository.Entity.RL_InstitutionParameter)">
+            <summary>
+            机构树获取
+            DEPT_CODE为机构编码,DEPT_LEVEL为机构级别,初始化DEPT_LEVEL传1，DEPT_CODE任意值，
+            获取下级机构DEPT_CODE入参当前机构的DEPT_CODE，DEPT_LEVEL为当前机构级别+1
+            </summary>
+            <param name="rL_InstitutionParameter">DEPT_CODE为机构编码,DEPT_LEVEL为机构级别</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MissionController.EmailpostAsyncEmailpostAsync(System.String,TMS_MobileRepository.Entity.RL_MainItem,System.String)">
+            <summary>
+            邮件发送
+            </summary>
+            <param name="Email">收件人邮箱（多个以","分隔）</param>
+            <param name="entity">邮件内容参数</param>
+            <param name="EmailType">发送邮件类型（AddMainItem：新建任务、EndMainItem：任务截止8小时）</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MissionController.GetUserByEntryAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            根据输入搜索人员(机构树)
+            </summary>
+            <param name="entry">输入字符(姓名，手机，邮箱)</param>
+            <param name="page">页数</param>
+            <param name="rows">行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.MissionController.GetUpdataMissonStatus(System.Int32)">
+            <summary>
+            修改任务状态
+            </summary>
+            <param name="Id">任务ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.TeamController.CreateAsync(TMS_MobileRepository.Entity.RL_TeamRes)">
+            <summary>
+            新建团队
+            </summary>
+            <param name="rL_TeamRes">Team中ID默认传0，TeamGuid空，TeamMembers中ID默认传0，TeamGuid空</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.TeamController.GetTeamList">
+            <summary>
+            所在团队页加载获取全部团队
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.TeamController.GetMyCreateTeamList(System.String)">
+            <summary>
+            获取我创建的团队
+            </summary>
+            <param name="UserCode">登录人userCode</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.TeamController.GetMyJoinTeamList(System.String)">
+            <summary>
+            获取我加入的团队
+            </summary>
+            <param name="UserCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.TeamController.GetTeamMemberDelete(System.Int32)">
+            <summary>
+            根据主键删除团队成员
+            </summary>
+            <param name="Id">团队成员主键ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.TeamController.GetTeamDelete(System.Int32)">
+            <summary>
+            删除团队及团队下所有成员
+            </summary>
+            <param name="Id">团队ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_MobileAPI.Controllers.TeamController.GetByNameList(System.String)">
+            <summary>
+            根据姓名查询数据
+            </summary>
+            <param name="Name">姓名</param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS_MobileAPI.Core.AppSetting">
+            <summary>
+            2018/12/11 zhong
+            appsetting类
+            </summary>
+        </member>
+        <member name="P:TMS_MobileAPI.Core.AppSetting.SqlServerConnection">
+            <summary>
+            sqlserver数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:TMS_MobileAPI.Core.AppSetting.Emailpost">
+            <summary>
+            发送邮件配置
+            </summary>
+        </member>
+        <member name="T:TMS_MobileAPI.Core.MyActionFilter">
+            <summary>
+            2018/12/11 zhong
+            自定义过滤器
+            </summary>
+        </member>
+        <member name="T:TMS_MobileAPI.Core.ResultMiddleware">
+            <summary>
+            2018/12/11 zhong
+            格式化返回
+            </summary>
+        </member>
+        <member name="T:TMS_MobileAPI.DependencyInjection.RepositoryInjection">
+            <summary>
+            2018/12/12 zhong
+            简单DDD模式仓储注入 
+            tips：增加的其他模型仓储在方法里注入
+            </summary>
+        </member>
+        <member name="T:TMS_MobileAPI.HangFire.IEmailService">
+            <summary>
+            2018/12/15 zhong
+            邮件定时任务测试
+            </summary>
+        </member>
+        <member name="T:TMS_MobileAPI.HangFire.EmailService">
+            <summary>
+            邮件服务测试
+            </summary>
+        </member>
+        <member name="M:TMS_MobileAPI.HangFire.EmailService.Test">
+            <summary>
+            测试
+            </summary>
+        </member>
+        <member name="T:TMS_MobileAPI.HangFire.HangFireAuthorizeFilter">
+            2018-12-18 zhong
+             <summary>
+             自定义hangfire认证
+             </summary>
+        </member>
+        <member name="T:TMS_MobileAPI.HangFire.MyActivator">
+            <summary>
+            2018/12/14 zhong
+            定时任务启动器
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,8 @@
+D:\项目\ITMSTotal\MobileServiceByDNC\TMS_MobileRepository\bin\Debug\netcoreapp2.2\TMS_MobileRepository.deps.json
+D:\项目\ITMSTotal\MobileServiceByDNC\TMS_MobileRepository\bin\Debug\netcoreapp2.2\TMS_MobileRepository.dll
+D:\项目\ITMSTotal\MobileServiceByDNC\TMS_MobileRepository\obj\Debug\netcoreapp2.2\TMS_MobileRepository.csproj.CoreCompileInputs.cache
+D:\项目\ITMSTotal\MobileServiceByDNC\TMS_MobileRepository\obj\Debug\netcoreapp2.2\TMS_MobileRepository.AssemblyInfoInputs.cache
+D:\项目\ITMSTotal\MobileServiceByDNC\TMS_MobileRepository\obj\Debug\netcoreapp2.2\TMS_MobileRepository.AssemblyInfo.cs
+D:\项目\ITMSTotal\MobileServiceByDNC\TMS_MobileRepository\bin\Debug\netcoreapp2.2\TMS_MobileRepository.pdb
+D:\项目\ITMSTotal\MobileServiceByDNC\TMS_MobileRepository\obj\Debug\netcoreapp2.2\TMS_MobileRepository.dll
+D:\项目\ITMSTotal\MobileServiceByDNC\TMS_MobileRepository\obj\Debug\netcoreapp2.2\TMS_MobileRepository.pdb

@@ -1,0 +1,12 @@
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\bin\Release\netcoreapp2.2\TMS_MobileRepository.deps.json
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\bin\Release\netcoreapp2.2\TMS_MobileRepository.dll
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\bin\Release\netcoreapp2.2\TMS_MobileRepository.pdb
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\obj\Release\netcoreapp2.2\TMS_MobileRepository.csprojAssemblyReference.cache
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\obj\Release\netcoreapp2.2\TMS_MobileRepository.csproj.CoreCompileInputs.cache
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\obj\Release\netcoreapp2.2\TMS_MobileRepository.AssemblyInfoInputs.cache
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\obj\Release\netcoreapp2.2\TMS_MobileRepository.AssemblyInfo.cs
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\obj\Release\netcoreapp2.2\TMS_MobileRepository.dll
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\obj\Release\netcoreapp2.2\TMS_MobileRepository.pdb
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\bin\Release\netcoreapp2.2\Microsoft.Extensions.Logging.Abstractions.dll
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\bin\Release\netcoreapp2.2\Microsoft.Extensions.Logging.Abstractions.xml
+D:\TMSProject\ITMSTotal\MOBILEService_dnc\trunk\TMS_MobileRepository\obj\Release\netcoreapp2.2\TMS_MobileRepository.csproj.CopyComplete
